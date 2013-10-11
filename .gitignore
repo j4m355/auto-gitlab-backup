@@ -3,3 +3,4 @@ auto-gitlab-backup.conf
 *~
 
 .DS_Store
+/.project
