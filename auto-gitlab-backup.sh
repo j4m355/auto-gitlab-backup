@@ -94,11 +94,20 @@ rsyncDaemon() {
 
 }
 
+zfsSnapshot(){
+    #zfs snapshot the backup
+    echo =============================================================
+    echo -e "Start zfs snapshot of \n$zfsvol"
+    echo =============================================================
+    zfs snapshot $zfsvol@date +"-%m_%d_%Y"
+}
+
 printScriptver() {
 	# print the most recent tag
 	echo "This is $0"
 	echo "Version $(git describe --abbrev=0 --tags), commit #$(git log --pretty=format:'%h' -n 1)."
 }
+
 
 ###
 ## Git'r done
@@ -137,6 +146,11 @@ else if [ -e $sshKeyPath -a -r $sshKeyPath ] && [[ $sshKeyPath != "" ]]
 		rsyncUp
 		fi
 	fi
+fi
+
+if [[ $zfssnapshot != "false" ]]
+then
+    zfsSnapshot
 fi
 
 # Print version

@@ -11,3 +11,6 @@ RVM_envPath=""
 ## only use the below settings if your destination is using rsync in daemon mode
 remoteModule=""
 rsync_password_file=""
+#zfs
+zfssnapshot="true" 
+zfsvol="tank/gitlab"
