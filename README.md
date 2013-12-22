@@ -40,7 +40,8 @@ remotePort=22 # ssh port
 ## only use the below settings if your destination is using rsync in daemon mode
 remoteModule=""
 rsync_password_file=""
-zfssnapshot="" #true or false 
+## only use the below settings if you want to use zfs to snapshot
+zfssnapshot="" #true  
 zfsvol="" #eg tank/gitlab
 ```
 
