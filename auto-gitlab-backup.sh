@@ -99,7 +99,7 @@ zfsSnapshot(){
     echo =============================================================
     echo -e "Start zfs snapshot of \n$zfsvol"
     echo =============================================================
-    zfs snapshot $zfsvol@date +"-%m_%d_%Y"
+    zfs snapshot $zfsvol@$(date +"%m-%d-%y")
 }
 
 printScriptver() {
